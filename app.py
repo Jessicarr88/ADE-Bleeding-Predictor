@@ -41,11 +41,12 @@ st.markdown("""
 # Load model and features
 @st.cache_resource
 def load_model():
-    with open('bleeding_model.pkl'
-'feature_names.pkl') as f:
+    with open('bleeding_model.pkl', 'rb') as f:
         model = pickle.load(f)
-    with open('/Users/jessicaramachandran/Downloads/Assignment 2.2-Bayesian Inference/ADE prototype/feature_names.pkl', 'rb') as f:
+
+    with open('feature_names.pkl', 'rb') as f:
         features = pickle.load(f)
+
     return model, features
 
 model, feature_names = load_model()
